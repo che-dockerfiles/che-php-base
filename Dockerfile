@@ -1,4 +1,4 @@
-# Copyright (c) 2020 Red Hat, Inc.
+# Copyright (c) 2021 Red Hat, Inc.
 # This program and the accompanying materials are made
 # available under the terms of the Eclipse Public License 2.0
 # which is available at https://www.eclipse.org/legal/epl-2.0/
@@ -34,7 +34,7 @@ RUN apt-get -y update \
     && echo "ServerName localhost" | tee -a /etc/apache2/apache2.conf
 
 #add composer
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+COPY --from=composer@sha256:f30ba99e9d3cceb1c8b4efcfe7d5d177e8c927e59aa5b6c269de92684a2ecf5a /usr/bin/composer /usr/bin/composer
 
 WORKDIR /projects
 
